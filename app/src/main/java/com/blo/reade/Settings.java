@@ -15,6 +15,7 @@ public class Settings extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        //check for NightMode
         if (new Settings().getNightMode(this)) {
             setTheme(R.style.DarkAppTheme);
         }
