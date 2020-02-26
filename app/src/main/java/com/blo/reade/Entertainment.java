@@ -88,7 +88,6 @@ public class Entertainment extends Fragment {
         // new FetchFeedTask().execute((Void) null);
         new FetchFeedTask(getContext(), urlAddress, gridView, ProgressBarLoading).execute();
 
-
         //Handling Swipe Refresh Layout
         swipeRefreshLayout.setColorScheme(android.R.color.holo_blue_dark,
                 android.R.color.holo_green_light, android.R.color.holo_orange_light, android.R.color.holo_red_light);
