@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="EXTRAS" />
+
+    <PreferenceCategory android:title="Theme">
+
+
+<!--        &lt;!&ndash; <EditTextPreference android:title="Your Name"-->
+<!--            android:id="@+id/usernameEditTextPreference"-->
+<!--            android:key="username"-->
+<!--            android:summary="Please provide your username"></EditTextPreference>&ndash;&gt;-->
+<!--        &lt;!&ndash;<CheckBoxPreference android:title="Enable Notification"-->
+<!--            android:defaultValue="false"-->
+<!--            android:summary="This option if selected will post latest news notifications ONCE at midnight."-->
+<!--            android:key="NOTIFICATIONS_ON" />&ndash;&gt;-->
+
+        <CheckBoxPreference android:title="Night Mode"
+            android:id="@+id/nightModeButton"
+            android:defaultValue="false"
+            android:summary="If checked,the night mode theme will be activated."
+            android:key="NIGHT_MODE" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="About">
+        <Preference
+            android:title="Developer"
+            android:summary="iamdeveloper03@gmail.com" />
+
+
+        <Preference
+            android:title="Version"
+            android:summary="1.1" />
+        <Preference android:title="© 2019" />
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="Acknowledgements">
+        <PreferenceScreen
+            android:title="Sources Page"
+            android:summary="All sources used in Read'E">
+            <intent android:action="com.blo.reade.AcknowledgementsActivity" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.blo.reade"
+        //  minSdkVersion 16 changed to 19 cos of onboarder activity
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 2
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:support-vector-drawable:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'gr.pantrif:easy-android-splash-screen:0.0.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation files('libs/android-query-full.0.25.10.jar')
+    implementation 'io.github.yavski:fab-speed-dial:1.0.6'
+    //img pull from description library
+    implementation 'org.jsoup:jsoup:1.11.3'
+    //menu library
+    implementation 'com.github.goka.blurredgridmenu:blurredgridmenu:1.0.2'
+    //String util library
+    implementation 'org.apache.commons:commons-lang3:3.4'
+    implementation 'it.sephiroth.android.library.bottomnavigation:bottom-navigation:2.0.1-rc1'
+    //onboarder library
+    implementation 'com.github.chyrta:AndroidOnboarder:0.7'
+    implementation 'commons-io:commons-io:2.5'
+    //Webview library
+    implementation 'com.asksira.android:webviewsuite:1.0.3'
+    //star library
+    implementation 'com.github.jd-alexander:LikeButton:0.2.3'
+    implementation 'com.github.varunest:sparkbutton:1.0.6'
+    //favourites placeholder library
+    implementation 'com.github.jetradarmobile.desertplaceholder:desertplaceholder:1.2.4'
+    //Live Button lib
+    implementation 'com.github.dakatso:livebutton:1.0.0'
+
+    implementation 'com.nanbox:RippleLayout:1.0.0'
+}

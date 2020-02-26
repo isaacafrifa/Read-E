@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_back"
+        android:icon="@drawable/ic_keyboard_arrow_left_white_24dp"
+        android:orderInCategory="101"
+        android:title="Back"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_forward"
+        android:icon="@drawable/ic_keyboard_arrow_right_white_24dp"
+        android:orderInCategory="102"
+        android:title="Forward"
+        app:showAsAction="always" />
+    <!--Extra Menu Items -->
+    <item
+        android:id="@+id/action_openinbrowser"
+        android:orderInCategory="103"
+        android:title="Open in Browser"
+        app:showAsAction="never" />
+    <item
+    android:id="@+id/action_copylink"
+    android:orderInCategory="104"
+    android:title="Copy Link"
+    app:showAsAction="never" />
+    <item
+        android:id="@+id/action_refreshpage"
+        android:orderInCategory="105"
+        android:title="Refresh"
+        app:showAsAction="never" />
+</menu>

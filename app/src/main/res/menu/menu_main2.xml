@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.blo.reade.Main2Activity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_favorites"
+        android:orderInCategory="100"
+        android:icon="@android:drawable/star_off"
+        android:title="Starred Feeds"
+        app:showAsAction="never" />
+</menu>

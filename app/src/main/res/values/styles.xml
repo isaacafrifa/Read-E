@@ -1,0 +1,94 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--- Customize popmenu -->
+        <item name="android:dropDownListViewStyle">@style/popup</item>
+    </style>
+
+
+    <!--Pop menu style-->
+    <style name="popup" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="android:divider">@color/grey</item>
+<!--        <item name="android:dividerHeight">0.1dp</item>-->
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:itemBackground">@android:color/white</item>
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="actionOverflowButtonStyle">@style/actionOverflowButtonStyle</item> <!-- sets the style for the overflow button -->
+        <item name="actionOverflowMenuStyle">@style/Base.Widget.AppCompat.PopupMenu
+        </item><!-- sets the style for the overflow menu-->
+        <item name="windowNoTitle">true</item>
+        <item name="android:tint">@color/white</item>
+    </style>
+
+
+    <style name="SplashActivityTheme" parent="AppTheme">
+        <item name="android:windowBackground">
+            @color/splashbackground
+        </item>
+    </style>
+
+    <style name="WhiteActivityTheme" parent="AppTheme">
+        <item name="android:windowBackground">
+            @color/white
+        </item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="SplashActivityTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="SplashActivityTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="SplashActivityTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!-- Dark base activity theme -->
+    <style name="ActivityTheme.Primary.Base.Dark"    parent="Theme.AppCompat.NoActionBar">
+        <item name="primaryTextColor">@color/dark_grey</item>
+        <item name="secondaryTextColor">@color/dark_grey</item>
+        <item name="backgroundCardColor">@color/off_black</item>
+        <item name="dividerColor">@color/off_white2</item>
+    </style>
+
+
+    <style name="DarkAppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/dark_grey</item>
+        <item name="colorPrimaryDark">@color/off_black</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/colorPrimary</item>
+        <item name="android:textColorSecondary">@color/off_white</item>
+        <item name="android:windowBackground">@color/grey</item>
+        <item name="backgroundCardColor">#28292e</item>
+        <item name="dividerColor">#F2F2F3</item>
+        <item name="actionOverflowMenuStyle">@style/MenuBack</item>
+        <item name="android:textViewStyle">@style/Widget.TextView.Custom</item>
+        <item name="android:dropDownListViewStyle">@style/popup</item>
+    </style>
+
+
+    <!-- This is the custom textview styles for this application -->
+    <style name="Widget.TextView.Custom" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/off_white</item>
+    </style>
+    <style name="MenuBack" parent="android:Widget.Holo.PopupMenu">
+        <item name="android:popupBackground">@color/dark_grey</item>
+    </style>
+
+
+    <style name="actionOverflowButtonStyle" parent="@style/Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@color/white</item>
+    </style>
+</resources>

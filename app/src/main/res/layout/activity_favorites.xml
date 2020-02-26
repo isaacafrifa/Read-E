@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Favorites">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="0dp"
+        android:background="@android:color/white"
+        android:elevation="80dp"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_weight="1"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:fontFamily="serif-monospace"
+            app:title="@string/title_activity_starred_feeds"
+            app:titleTextAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+            app:titleTextColor="@color/white"
+            >
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/emptytextView"
+            android:layout_marginTop="15dp"
+            android:text="No Starred Feeds"
+            android:fontFamily="sans-serif-condensed"
+            android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/imageplaceholder"
+            android:src="@drawable/placeholder"
+            android:layout_marginTop="15dp"
+            android:visibility="gone"
+            android:background="@color/off_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+        <GridView
+            android:id="@+id/favorites_gridView"
+            android:layout_margin="4dp"
+            android:numColumns="1"
+            android:padding="0dp"
+            android:layoutAnimation="@anim/layout_animation_slide_right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </GridView>
+
+
+
+    </LinearLayout>
+</LinearLayout>

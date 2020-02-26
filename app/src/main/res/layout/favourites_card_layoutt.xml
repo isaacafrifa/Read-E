@@ -1,0 +1,213 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="2dp"
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="@android:color/transparent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:paddingHorizontal="2dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Favourites_feedSource_textVieww"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_margin="2dp"
+                    android:textStyle="bold"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:text="Source" />
+
+                <TextView
+                    android:id="@+id/Favourites_feedSavedDate_textVieww"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="2dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Date"
+                    android:textAppearance="?android:textAppearanceSmall" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="1dp">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true" />
+
+                <ImageView
+                    android:id="@+id/Favourites_feedimageVieww"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:src="@drawable/testimage"
+                    android:tint="#5F000000"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="3dp"
+                    android:padding="1dp" />
+
+                <TextView
+                    android:id="@+id/Favourites_feedTitle_textVieww"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:layout_alignLeft="@+id/Favourites_feedimageVieww"
+                    android:layout_alignBottom="@id/Favourites_feedimageVieww"
+                    android:layout_margin="4dp"
+                    android:text="Title"
+                    style="@style/WhiteTextWithShadow"
+                    android:textSize="@dimen/headline_size" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+                <!--                <Button-->
+                <!--                    android:id="@+id/favourites_feedView_button"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+
+                <!--                    android:background="@color/off_white"-->
+                <!--                    android:gravity="start|center"-->
+                <!--                    android:paddingStart="10dp"-->
+                <!--                    android:layout_marginLeft="1dp"-->
+                <!--                    android:layout_marginRight="1dp"-->
+                <!--                    android:text="@string/view_online"-->
+                <!--                    android:drawableEnd="@drawable/black_arrow_24"/>-->
+                <ru.katso.livebutton.LiveButton android:id="@+id/favourites_feedView_button"
+                    xmlns:livebutton="http://schemas.android.com/apk/res-auto"
+                    android:layout_height="40dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/view_online"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    livebutton:corners="15dp"
+                    livebutton:normalHeight="3dp"
+                    livebutton:pressedHeight="2dp"
+                    livebutton:backgroundColor="@color/off_white"
+                    livebutton:shadowColor="@color/colorAccent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/calendar"
+                    android:layout_marginStart="5dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_gravity="left" />
+
+                <TextView
+                    android:id="@+id/Favourites_feedPubDate_textVieww"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/description_textsize"
+                    android:layout_weight="1"
+                    android:layout_gravity="start"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Pub Date" />
+                <!--    <com.varunest.sparkbutton.SparkButton-->
+                <!--        android:id="@+id/spark_button"-->
+                <!--        android:layout_width="35dp"-->
+                <!--        android:layout_height="35dp"-->
+                <!--        app:sparkbutton_activeImage="@drawable/star_filled_48"-->
+                <!--        app:sparkbutton_inActiveImage="@drawable/starred"-->
+                <!--        app:sparkbutton_iconSize="40dp"-->
+                <!--        app:sparkbutton_primaryColor="@color/colorPrimary"-->
+                <!--        app:sparkbutton_secondaryColor="@color/colorPrimaryDark" />-->
+                <!--                <ImageButton-->
+                <!--                    android:id="@+id/favourites_feedDelete_button"-->
+                <!--                    android:layout_width="40dp"-->
+                <!--                    android:layout_height="40dp"-->
+                <!--                    android:layout_gravity="end"-->
+                <!--                    android:layout_marginRight="2dp"-->
+                <!--                    android:layout_weight="0"-->
+                <!--                    android:src="@android:drawable/ic_menu_delete"/>-->
+
+                <!--                <ImageButton-->
+                <!--                    android:id="@+id/favourites_feedShare_button"-->
+                <!--                    android:layout_width="40dp"-->
+                <!--                    android:layout_height="40dp"-->
+                <!--                    android:layout_gravity="end"-->
+                <!--                    android:layout_weight="0"-->
+                <!--                    android:src="@android:drawable/ic_menu_share"/>-->
+                <!--                    android:background="@android:color/transparent"-->
+
+                <TextView
+                    android:id="@+id/fav_popup_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:text="@string/popupmenu_textView"
+                    android:textAppearance="?android:textAppearanceLarge" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/Favourites_feedDescription_textVieww"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description" />
+
+                <TextView
+                    android:text="Show More"
+                    android:layout_gravity="right"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/showMore_textView"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:text="Show Less"
+                    android:layout_gravity="right"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/showLess_textView"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

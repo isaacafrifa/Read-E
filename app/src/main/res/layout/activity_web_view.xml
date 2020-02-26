@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".WebViewActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/SplashActivityTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="@string/app_name"
+            app:titleTextAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+            app:titleTextColor="@color/white"
+            app:popupTheme="@style/SplashActivityTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+    <!--<ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+    <com.asksira.webviewsuite.WebViewSuite
+        android:id="@+id/webViewSuite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:webViewProgressBarStyle="linear"
+        app:inflationDelay="100"
+        app:enableJavaScript="true"
+        app:overrideTelLink="true"
+        app:overrideEmailLink="true"
+        app:overridePdfLink="true"
+        app:showZoomControl="true"
+        app:enableVerticalScrollBar="false"
+        app:enableHorizontalScrollBar="false" />
+
+</LinearLayout>

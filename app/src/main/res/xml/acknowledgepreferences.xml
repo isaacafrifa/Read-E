@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Acknowledgements">
+        <PreferenceScreen
+            android:title="BBC"
+            android:summary="www.bbc.co.uk">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.bbc.co.uk" />
+
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="ESQUIRE"
+            android:summary="www.esquire.com">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.esquire.com/" />
+
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="FREEPIK"
+            android:summary="www.freepik.com">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.freepik.com/" />
+
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="GAMESPOT"
+            android:summary="www.gamespot.com">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.gamespot.com/" />
+
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="CNN"
+            android:summary="www.cnn.com">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://edition.cnn.com/" />
+
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="MUSIC-NEWS"
+            android:summary="www.music-news.com">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://www.music-news.com/" />
+
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="MOVIEWEB"
+            android:summary="www.movieweb.com">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://movieweb.com/" />
+
+        </PreferenceScreen>
+
+
+        <PreferenceScreen
+            android:title="FOXSPORTS"
+            android:summary="www.foxsports.com">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.foxsports.com/" />
+
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="VOA"
+            android:summary="www.voanews.com">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.voanews.com/" />
+
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="MNN"
+            android:summary="www.mnn.com">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.mnn.com/" />
+
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="WIRED"
+            android:summary="www.wired.com">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.wired.com/" />
+
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="ELLE"
+            android:summary="www.elle.com">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.elle.com/" />
+
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="CoS"
+            android:summary="www.consequenceofsound.net">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://consequenceofsound.net/" />
+
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.blo.reade.Main2Activity">
+
+    <item
+        android:id="@+id/action_star"
+        android:orderInCategory="100"
+        android:icon="@android:drawable/star_on"
+        android:title="Star"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/action_share"
+        android:orderInCategory="100"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="Share"
+        app:showAsAction="withText" />
+
+</menu>
