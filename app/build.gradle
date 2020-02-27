@@ -7,8 +7,8 @@ android {
         //  minSdkVersion 16 changed to 19 cos of onboarder activity
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 2
-        versionName "1.0"
+        versionCode 4
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
@@ -55,5 +55,4 @@ dependencies {
     //Live Button lib
     implementation 'com.github.dakatso:livebutton:1.0.0'
 
-    implementation 'com.nanbox:RippleLayout:1.0.0'
 }
