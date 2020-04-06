@@ -144,6 +144,7 @@ public class MyGridViewAdapter extends BaseAdapter {
             }
         });
 
+        
 //        starBtn.setEventListener(new SparkEventListener(){
 //            @Override
 //            public void onEvent(ImageView button, boolean buttonState) {
