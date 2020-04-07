@@ -98,7 +98,7 @@ public class FavouritesFeed extends AppCompatActivity {
                     .transition(withCrossFade()) //added cross fade animation
                     .into(feedimageView); //ImageView to set.
         } else {
-            IoC.bbcImageCheck.imagecheck(bundleObject.getLink(), feedimageView);
+            IoC.myImageConfig.imagecheck(bundleObject.getLink(), feedimageView);
         }
 
         //link

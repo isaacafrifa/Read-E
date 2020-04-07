@@ -64,12 +64,23 @@
 
 
         <PreferenceScreen
-            android:title="FOXSPORTS"
+            android:title="FOX SPORTS"
             android:summary="www.foxsports.com">
 
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://www.foxsports.com/" />
+
+        </PreferenceScreen>
+
+
+        <PreferenceScreen
+            android:title="CBS SPORTS"
+            android:summary="www.cbssports.com">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.cbssports.com/" />
 
         </PreferenceScreen>
 

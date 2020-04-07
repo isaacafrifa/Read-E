@@ -21,13 +21,9 @@ import controller.IoC;
 import controller.ShareTextUrl;
 import controller.SourceGetter;
 import controller.StarFeed;
-import controller.TimeAgoConverter;
-import datalayer.DatabaseManager;
 import io.github.yavski.fabspeeddial.FabSpeedDial;
 import model.Feed;
 import model.MyErrorTracker;
-import model.SavedFeed;
-import model.TimeAgo;
 
 import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
@@ -105,7 +101,7 @@ public class FeedActivity extends AppCompatActivity {
                     .transition(withCrossFade()) //added cross fade animation
                     .into(feedimageView); //ImageView to set.
         } else {
-            IoC.bbcImageCheck.imagecheck(bundleObject.getLink(),feedimageView);
+            IoC.myImageConfig.imagecheck(bundleObject.getLink(),feedimageView);
             //  feedimageView.setBackgroundResource(R.drawable.africa);
         }
 

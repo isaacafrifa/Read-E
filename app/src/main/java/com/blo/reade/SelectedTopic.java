@@ -100,7 +100,7 @@ public class SelectedTopic extends AppCompatActivity {
             urlAddress = "http://rss.cnn.com/rss/edition_travel.rss";
             // Toast.makeText(this, ""+urlAddress, Toast.LENGTH_SHORT).show();
         } else if (bundleObject.equalsIgnoreCase("basketball")) {
-            urlAddress = "http://feeds.bbci.co.uk/sport/basketball/rss.xml";
+            urlAddress = "https://www.cbssports.com/rss/headlines/nba/";
             //  Toast.makeText(this, ""+urlAddress, Toast.LENGTH_SHORT).show();
         } else if (bundleObject.equalsIgnoreCase("music")) {
             urlAddress = "https://consequenceofsound.net/feed/";

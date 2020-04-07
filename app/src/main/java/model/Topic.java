@@ -11,8 +11,7 @@ public class Topic  implements Comparable{
         this.title = title;
         this.image = image;
     }
-    public Topic() {
-    }
+
 //Getters and Setters
     public String getTitle() {
         return title;

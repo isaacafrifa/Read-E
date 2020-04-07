@@ -18,8 +18,6 @@ import com.blo.reade.R;
 import com.blo.reade.WebViewActivity;
 
 import com.bumptech.glide.Glide;
-import com.varunest.sparkbutton.SparkButton;
-import com.varunest.sparkbutton.SparkEventListener;
 
 import java.util.List;
 import java.util.Objects;
@@ -120,7 +118,7 @@ public class MyGridViewAdapter extends BaseAdapter {
                     .into(imageView); //ImageView to set.
 
         } else {
-            IoC.bbcImageCheck.imagecheck(feed.getLink(), imageView);
+            IoC.myImageConfig.imagecheck(feed.getLink(), imageView);
         }
 
 

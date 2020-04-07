@@ -14,6 +14,8 @@ import android.widget.GridView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 import controller.FetchFeedTask;
 import model.Feed;
 import model.MyErrorTracker;
@@ -117,7 +119,7 @@ public class Entertainment extends Fragment {
                                 if (selectedFeed.getLink() != null) {
                                     bundle.putSerializable("BundleObject", selectedFeed.getLink());
                                     intent.putExtras(bundle);
-                                    getContext().startActivity(intent);
+                                    Objects.requireNonNull(getContext()).startActivity(intent);
                                 } else {
                                     Toast.makeText(getContext(), "" + MyErrorTracker.EMPTY_URL, Toast.LENGTH_SHORT).show();
                                 }

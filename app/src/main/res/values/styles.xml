@@ -75,7 +75,8 @@
         <item name="dividerColor">#F2F2F3</item>
         <item name="actionOverflowMenuStyle">@style/MenuBack</item>
         <item name="android:textViewStyle">@style/Widget.TextView.Custom</item>
-        <item name="android:dropDownListViewStyle">@style/popup</item>
+        <!-- the below LOC was used to setting background color for the popup menus-->
+        <item name="android:itemBackground">@color/dark_grey</item>
     </style>
 
 
@@ -83,6 +84,7 @@
     <style name="Widget.TextView.Custom" parent="android:Widget.TextView">
         <item name="android:textColor">@color/off_white</item>
     </style>
+    <!-- Action Bar Popup Menu Style-->
     <style name="MenuBack" parent="android:Widget.Holo.PopupMenu">
         <item name="android:popupBackground">@color/dark_grey</item>
     </style>

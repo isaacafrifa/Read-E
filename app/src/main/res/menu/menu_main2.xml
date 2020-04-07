@@ -12,6 +12,6 @@
         android:id="@+id/action_favorites"
         android:orderInCategory="100"
         android:icon="@android:drawable/star_off"
-        android:title="Starred Feeds"
+        android:title="@string/starred_feeds"
         app:showAsAction="never" />
 </menu>

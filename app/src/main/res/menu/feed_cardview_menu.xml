@@ -7,13 +7,13 @@
         android:id="@+id/action_star"
         android:orderInCategory="100"
         android:icon="@android:drawable/star_on"
-        android:title="Star"
+        android:title="@string/star"
         app:showAsAction="withText" />
     <item
         android:id="@+id/action_share"
         android:orderInCategory="100"
         android:icon="@android:drawable/ic_menu_share"
-        android:title="Share"
+        android:title="@string/share"
         app:showAsAction="withText" />
 
 </menu>

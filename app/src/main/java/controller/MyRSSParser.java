@@ -126,7 +126,8 @@ It then sends this arraylist to adapter for binding purposes.
 
                             if (name.equalsIgnoreCase(LINK)) {
                                 //  Log.i("Attribute", "setLink");
-                                article.setLink(parser.nextText());
+                                //trim Article URL
+                                article.setLink(parser.nextText().trim());
 
                             } else if (name.equalsIgnoreCase(DESCRIPTION)) {
                                 // Log.i("Attribute", "description");
@@ -151,7 +152,8 @@ It then sends this arraylist to adapter for binding purposes.
 
                             } else if (name.equalsIgnoreCase(PUB_DATE)) {
                                 //Log.i("Attribute", "date");
-                                article.setDate(parser.nextText());
+                                //trim pubDate
+                                article.setDate(parser.nextText().trim());
                             } else if (name.equalsIgnoreCase(IMAGE)) {
                                 //Log.i("Attribute", "thumbnail");
                                 //------------scan and get attribute u want

@@ -1,11 +1,9 @@
 package com.blo.reade;
 
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.internal.NavigationMenu;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -106,7 +104,7 @@ public class TopicFeed extends AppCompatActivity {
 
         } else {
             //empty or null Image
-            IoC.bbcImageCheck.imagecheck(bundleObject.getLink(), feedimageView);
+            IoC.myImageConfig.imagecheck(bundleObject.getLink(), feedimageView);
         }
 
         //--------------get Source textView and assign to feed Source variable

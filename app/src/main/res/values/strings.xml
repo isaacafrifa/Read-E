@@ -203,6 +203,9 @@
     <string name="title_notifications">Notifications</string>
     <string name="view_online">View Online</string>
     <string name="popupmenu_textView">⋮</string>
+    <string name="star">Star</string>
+    <string name="share">Share</string>
+    <string name="starred_feeds">Starred Feeds</string>
 
 
 </resources>

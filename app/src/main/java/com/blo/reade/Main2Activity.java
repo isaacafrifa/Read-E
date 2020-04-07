@@ -111,9 +111,6 @@ public class Main2Activity extends AppCompatActivity {
                 // Check if we're running on Android 5.0 or higher
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     startActivity(intent);
-                    // Apply activity transition
-                    /*startActivity(intent,
-                            ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());**/
 
                 } else {
                     // Swap without transition

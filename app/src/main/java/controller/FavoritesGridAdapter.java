@@ -122,7 +122,7 @@ public class FavoritesGridAdapter extends BaseAdapter {
 
 
         } else {
-            IoC.bbcImageCheck.imagecheck(feed.getLink(), imageView);
+            IoC.myImageConfig.imagecheck(feed.getLink(), imageView);
         }
 
         //Toggle between Show More or Less button
