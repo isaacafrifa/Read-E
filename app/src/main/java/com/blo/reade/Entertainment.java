@@ -29,8 +29,7 @@ import model.MyErrorTracker;
  */
 public class Entertainment extends Fragment {
 
-    //private final static String urlAddress = "https://www.esquire.com/rss/entertainment.xml/";
-    private final static String urlAddress = "https://consequenceofsound.net/feed/";
+    private final static String urlAddress = "https://www.esquire.com/rss/entertainment.xml/";
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";

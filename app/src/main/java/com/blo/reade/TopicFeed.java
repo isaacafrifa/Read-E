@@ -15,9 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.androidquery.AQuery;
+import com.bumptech.glide.Glide;
 
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.Objects;
 
@@ -28,21 +27,19 @@ import datalayer.DatabaseManager;
 import io.github.yavski.fabspeeddial.FabSpeedDial;
 import model.Feed;
 import model.MyErrorTracker;
-import model.MyStringTruncater;
 import model.SavedFeed;
 import controller.ShareTextUrl;
+
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 public class TopicFeed extends AppCompatActivity {
     private Feed bundleObject;
     private ProgressDialog pd;
-    private AQuery aQuery;
-    private MyStringTruncater myStringTruncater;
     private Bundle bundle;
     private Intent intent;
     private SavedFeed savedFeed;
     private SavedFeed checksavedFeed;
     private DatabaseManager databaseManager;
-
 
 
     @Override
@@ -58,24 +55,24 @@ public class TopicFeed extends AppCompatActivity {
         //set back icon on action bar
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        pd=new ProgressDialog(this);
+        pd = new ProgressDialog(this);
         //  pd.setTitle("Article Page");
         pd.setMessage("Loading...Please wait");
         pd.show();
 
-        TextView datetextView=findViewById(R.id.topicfeed_DatetextView);
-        TextView titletextView=findViewById(R.id.topicfeed_TitletextView);
-        TextView descriptiontextView=findViewById(R.id.topicfeed_DescriptiontextView);
-        ImageView feedimageView=findViewById(R.id.topicfeed_imageView);
-        TextView sourcetextView=findViewById(R.id.topicfeed_SourcetextView);
-        TextView linktextView=findViewById(R.id.topicfeed_LinktextView);
+        TextView datetextView = findViewById(R.id.topicfeed_DatetextView);
+        TextView titletextView = findViewById(R.id.topicfeed_TitletextView);
+        TextView descriptiontextView = findViewById(R.id.topicfeed_DescriptiontextView);
+        ImageView feedimageView = findViewById(R.id.topicfeed_imageView);
+        TextView sourcetextView = findViewById(R.id.topicfeed_SourcetextView);
+        TextView linktextView = findViewById(R.id.topicfeed_LinktextView);
         Button btn = findViewById(R.id.topicfeed_button);
 
-        aQuery=new AQuery(TopicFeed.this);
-        databaseManager= new DatabaseManager(TopicFeed.this);
+     //  aQuery = new AQuery(TopicFeed.this);
+        databaseManager = new DatabaseManager(TopicFeed.this);
 
         //get Bundle obj
-        bundleObject = (Feed) getIntent().getExtras().get("BundleObject");
+        bundleObject = (Feed) Objects.requireNonNull(getIntent().getExtras()).get("BundleObject");
         assert bundleObject != null;
         //------ Set obj params to views
         //link
@@ -92,21 +89,24 @@ public class TopicFeed extends AppCompatActivity {
         }
 
         //title
-        if (bundleObject.getTitle()!=null)
-        titletextView.setText(bundleObject.getTitle());
+        if (bundleObject.getTitle() != null)
+            titletextView.setText(bundleObject.getTitle());
         //desc
-        if (bundleObject.getDescription()!=null)
-        descriptiontextView.setText(bundleObject.getDescription());
+        if (bundleObject.getDescription() != null)
+            descriptiontextView.setText(bundleObject.getDescription());
 
         //image
-        if (bundleObject.getImage()!= null) {
-            //if we are not able to load the image, use a default image (R.drawable.default_image)
-            //this image is huge, avoid memory caching
-            aQuery.id(feedimageView).progress(R.id.progressBar).
-                    image(bundleObject.getImage(), false, true, 0, R.drawable.testimage, null, AQuery.FADE_IN);
+        if (bundleObject.getImage() != null) {
+
+            Glide.with(TopicFeed.this)
+                    .load(bundleObject.getImage()) // Remote URL of image.
+                    .error(R.drawable.testimage)  //  image in case of error
+                    .transition(withCrossFade()) //added cross fade animation
+                    .into(feedimageView); //ImageView to set.
+
         } else {
             //empty or null Image
-            IoC.bbcImageCheck.imagecheck(bundleObject.getLink(),feedimageView);
+            IoC.bbcImageCheck.imagecheck(bundleObject.getLink(), feedimageView);
         }
 
         //--------------get Source textView and assign to feed Source variable
@@ -120,22 +120,19 @@ public class TopicFeed extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //moving to next page
-                intent= new Intent(TopicFeed.this,WebViewActivity.class);
-                bundle= new Bundle();
+                intent = new Intent(TopicFeed.this, WebViewActivity.class);
+                bundle = new Bundle();
                 //check empty link
-                if (bundleObject.getLink()!=null) {
+                if (bundleObject.getLink() != null) {
                     bundle.putSerializable("BundleObject", bundleObject.getLink());
                     intent.putExtras(bundle);
                     startActivity(intent);
-                }
-                else {
-                    Toast.makeText(TopicFeed.this, ""+ MyErrorTracker.EMPTY_URL, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(TopicFeed.this, "" + MyErrorTracker.EMPTY_URL, Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
-
-
 
 
 //Custom Floating button
@@ -148,7 +145,7 @@ public class TopicFeed extends AppCompatActivity {
 
             @Override
             public boolean onMenuItemSelected(final MenuItem menuItem) {
-                 int id = menuItem.getItemId();
+                int id = menuItem.getItemId();
 
                 //noinspection SimplifiableIfStatement
                 if (id == R.id.fab_star) {
@@ -165,7 +162,7 @@ public class TopicFeed extends AppCompatActivity {
 
             @Override
             public void onMenuClosed() {
-              //  Toast.makeText(TopicFeed.this, "Menu Closed", Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(TopicFeed.this, "Menu Closed", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -177,7 +174,6 @@ public class TopicFeed extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 
 
 }

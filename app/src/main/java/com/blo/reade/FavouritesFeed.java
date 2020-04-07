@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.androidquery.AQuery;
+import com.bumptech.glide.Glide;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -27,6 +27,12 @@ import model.Feed;
 import model.MyErrorTracker;
 import model.SavedFeed;
 import controller.ShareTextUrl;
+
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
+
+/*
+This Activity is no longer in use. Refactor later
+ */
 
 public class FavouritesFeed extends AppCompatActivity {
     private SavedFeed bundleObject;
@@ -61,7 +67,6 @@ public class FavouritesFeed extends AppCompatActivity {
         TextView linktextView = findViewById(R.id.favfeed_LinktextView);
         Button btn = findViewById(R.id.favfeed_button);
 
-        AQuery aQuery = new AQuery(FavouritesFeed.this);
         databaseManager= new DatabaseManager(FavouritesFeed.this);
 
 
@@ -86,10 +91,12 @@ public class FavouritesFeed extends AppCompatActivity {
 
         //image
         if (bundleObject.getImageUrl()!= null) {
-            //if we are not able to load the image, use a default image (R.drawable.default_image)
-            //this image is huge, avoid memory caching
-            aQuery.id(feedimageView).progress(R.id.progressBar).
-                    image(bundleObject.getImageUrl(), false, true, 0, R.drawable.testimage, null, AQuery.FADE_IN);
+
+            Glide.with(FavouritesFeed.this)
+                    .load(bundleObject.getImageUrl()) // Remote URL of image.
+                    .error(R.drawable.testimage)  //  image in case of error
+                    .transition(withCrossFade()) //added cross fade animation
+                    .into(feedimageView); //ImageView to set.
         } else {
             IoC.bbcImageCheck.imagecheck(bundleObject.getLink(), feedimageView);
         }

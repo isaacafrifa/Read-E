@@ -14,7 +14,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"> <!-- This LOC allows you to make calls to "http://" URLs -->
         <activity android:name=".OnboarderActivity" />
         <activity
             android:name=".Splash"

@@ -103,7 +103,7 @@ public class SelectedTopic extends AppCompatActivity {
             urlAddress = "http://feeds.bbci.co.uk/sport/basketball/rss.xml";
             //  Toast.makeText(this, ""+urlAddress, Toast.LENGTH_SHORT).show();
         } else if (bundleObject.equalsIgnoreCase("music")) {
-            urlAddress = "http://www.music-news.com/rss/UK/news?includeCover=true";
+            urlAddress = "https://consequenceofsound.net/feed/";
             //  Toast.makeText(this, ""+urlAddress, Toast.LENGTH_SHORT).show();
         } else if (bundleObject.equalsIgnoreCase("TV & Movies")) {
             urlAddress = "https://movieweb.com/rss/all-news/";
@@ -135,17 +135,21 @@ public class SelectedTopic extends AppCompatActivity {
         } else if (bundleObject.equalsIgnoreCase("Food")) {
             urlAddress = " https://www.mnn.com/feeds/category/food/";
             //     Toast.makeText(this, ""+urlAddress, Toast.LENGTH_SHORT).show();
-        } else if (bundleObject.equalsIgnoreCase("Arts & Culture")) {
-            urlAddress = "https://www.voanews.com/api/zp$ove-vir";
-            //    Toast.makeText(this, "" + urlAddress, Toast.LENGTH_SHORT).show();
-        } else if (bundleObject.equalsIgnoreCase("US Politics")) {
-            urlAddress = "https://www.voanews.com/api/zuriqiepuiqm";
-            //   Toast.makeText(this, "" + urlAddress, Toast.LENGTH_SHORT).show();
-        } else if (bundleObject.equalsIgnoreCase("Security")) {
-            urlAddress = "https://www.wired.com/feed/category/security/latest/rss";
-        } else if (bundleObject.equalsIgnoreCase("Ideas")) {
-            urlAddress = "https://www.wired.com/feed/category/ideas/latest/rss";
-        } else if (bundleObject.equalsIgnoreCase("Lifestyle")) {
+        }
+//        else if (bundleObject.equalsIgnoreCase("Arts & Culture")) {
+//            urlAddress = "https://www.voanews.com/api/zp$ove-vir";
+//            //    Toast.makeText(this, "" + urlAddress, Toast.LENGTH_SHORT).show();
+//        } else if (bundleObject.equalsIgnoreCase("US Politics")) {
+//            urlAddress = "https://www.voanews.com/api/zuriqiepuiqm";
+//            //   Toast.makeText(this, "" + urlAddress, Toast.LENGTH_SHORT).show();
+//        }
+//        else if (bundleObject.equalsIgnoreCase("Security")) {
+//            urlAddress = "https://www.wired.com/feed/category/security/latest/rss";
+//        }
+//        else if (bundleObject.equalsIgnoreCase("Ideas")) {
+//            urlAddress = "https://www.wired.com/feed/category/ideas/latest/rss";
+//        }
+        else if (bundleObject.equalsIgnoreCase("Lifestyle")) {
             urlAddress = "https://www.esquire.com/rss/lifestyle.xml/";
         } else if (bundleObject.equalsIgnoreCase("Relationships")) {
             urlAddress = "https://www.elle.com/rss/life-love.xml/";

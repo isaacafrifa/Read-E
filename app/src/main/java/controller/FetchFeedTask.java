@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.ProgressBar;
@@ -75,6 +76,7 @@ public class FetchFeedTask extends AsyncTask<Void, Void, Object> {
         try {
             HttpURLConnection con = (HttpURLConnection) connection;
             int responseCode = con.getResponseCode();
+            Log.e("------->>>>>>","Response Code: "+responseCode);
 
             if (responseCode == HttpURLConnection.HTTP_OK) {
                 return new BufferedInputStream(con.getInputStream());

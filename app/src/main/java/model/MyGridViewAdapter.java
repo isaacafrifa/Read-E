@@ -14,10 +14,10 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.androidquery.AQuery;
 import com.blo.reade.R;
 import com.blo.reade.WebViewActivity;
 
+import com.bumptech.glide.Glide;
 import com.varunest.sparkbutton.SparkButton;
 import com.varunest.sparkbutton.SparkEventListener;
 
@@ -30,6 +30,8 @@ import controller.SourceGetter;
 import controller.StarFeed;
 import controller.TimeAgoConverter;
 import ru.katso.livebutton.LiveButton;
+
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 ///----------------my Grid View Adapter
 public class MyGridViewAdapter extends BaseAdapter {
@@ -65,7 +67,6 @@ public class MyGridViewAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final Feed feed = feedList.get(position);
         View mygrid;
-        AQuery aq = new AQuery(context);
 
         if (convertView == null) {
             mygrid = Objects.requireNonNull(inflater).inflate(R.layout.feed_card_layoutt, null);
@@ -105,10 +106,18 @@ public class MyGridViewAdapter extends BaseAdapter {
         source_textView.setText(feed.getSource());
 
         if (feed.getImage() != null) {
-            //if we are not able to load the image, use a default image (R.drawable.default_image)
+            //AQuery is outdated
             //this image is huge, avoid memory caching
-            aq.id(imageView).progress(R.id.progressBar).
-                    image(feed.getImage(), false, true, 0, R.drawable.testimage, null, AQuery.FADE_IN);
+//            aq.id(imageView).progress(R.id.progressBar).
+//                    image(feed.getImage(), false, true, 0, R.drawable.testimage, null, AQuery.FADE_IN);
+
+            Glide.with(context)
+                    .load(feed.getImage()) // Remote URL of image.
+                    .error(R.drawable.testimage)  //  image in case of error
+                    .transition(withCrossFade()) //added cross fade animation
+                   //.centerCrop() // get center cropped image as result
+                   // .placeholder() // Image until Image is loaded
+                    .into(imageView); //ImageView to set.
 
         } else {
             IoC.bbcImageCheck.imagecheck(feed.getLink(), imageView);

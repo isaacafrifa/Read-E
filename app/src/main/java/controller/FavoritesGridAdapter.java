@@ -16,9 +16,9 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.androidquery.AQuery;
 import com.blo.reade.R;
 import com.blo.reade.WebViewActivity;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -27,6 +27,8 @@ import model.Feed;
 import model.MyErrorTracker;
 import model.SavedFeed;
 import ru.katso.livebutton.LiveButton;
+
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 public class FavoritesGridAdapter extends BaseAdapter {
     private Context context;
@@ -71,7 +73,7 @@ public class FavoritesGridAdapter extends BaseAdapter {
         View mygrid;
         final DatabaseManager databaseManager = new DatabaseManager(context);
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        AQuery aq = new AQuery(context);
+
 
         if (convertView == null) {
             assert inflater != null;
@@ -99,20 +101,25 @@ public class FavoritesGridAdapter extends BaseAdapter {
 
         //set Feed Variables to Views
         title_textView.setText(feed.getTitle());
-        pubDate_textView.setText(feed.getDateofpublication());
-        savedDate_textView.setText("Saved on: " + feed.getTimeSaved());
+
+        //pubDate_textView.setText(feed.getDateofpublication()); //-- change pubDate to TimeAgo
+        //Convert pubDate to TimeAgo
+        pubDate_textView.setText(String.format("%s ago", TimeAgoConverter.convertToTimeAgo(feed.getDateofpublication())));
+
+        savedDate_textView.setText(String.format("Saved on: %s", feed.getTimeSaved()));
         description_textView.setText(feed.getDescription());
         source_textView.setText(feed.getSource());
 
 
         //Image Check
         if (feed.getImageUrl() != null) {
-            //  /* the normal usage */ aq.id(feedimageView).image(feed.getImage());
 
-            //if we are not able to load the image, use a default image (R.drawable.default_image)
-            //this image is huge, avoid memory caching
-            aq.id(imageView).progress(R.id.progressBar).
-                    image(feed.getImageUrl(), false, true, 0, R.drawable.testimage, null, AQuery.FADE_IN);
+            Glide.with(context)
+                    .load(feed.getImageUrl()) // Remote URL of image.
+                    .error(R.drawable.testimage)  //  image in case of error
+                    .transition(withCrossFade()) //added cross fade animation
+                    .into(imageView); //ImageView to set.
+
 
         } else {
             IoC.bbcImageCheck.imagecheck(feed.getLink(), imageView);

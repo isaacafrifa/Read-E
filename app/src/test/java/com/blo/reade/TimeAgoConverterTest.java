@@ -11,7 +11,7 @@ public class TimeAgoConverterTest {
     String input;
     String output;
     String expected;
-    String defaultDate;
+    private String defaultDate;
 
     @Before
     public void setUp() {

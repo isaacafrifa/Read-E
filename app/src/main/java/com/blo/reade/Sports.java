@@ -22,7 +22,6 @@ import java.util.Objects;
 import controller.FetchFeedTask;
 import model.Feed;
 import model.MyErrorTracker;
-import model.MyRssFeedProvider;
 
 
 /**
@@ -149,62 +148,6 @@ public class Sports extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
-
-
-    //----- ASYNC
-  /*  private class FetchFeedTask extends AsyncTask<Void, Void, Boolean> {
-        private String urlLink;
-
-        //Feed feed;
-
-        @Override
-        protected void onPreExecute() {
-            swipeRefreshLayout.setRefreshing(true);
-           // Toast.makeText(getContext(), "Refreshing...", Toast.LENGTH_SHORT).show();
-            urlLink = "http://feeds.bbci.co.uk/sport/rss.xml";
-        }
-
-        @Override
-        protected Boolean doInBackground(Void... voids) {
-
-            if(!urlLink.startsWith("http://") && !urlLink.startsWith("https://"))
-                urlLink = "http://" + urlLink;
-
-            // URL url = new URL(urlLink);
-            //InputStream inputStream = url.openConnection().getInputStream();
-            myRssFeedProvider= new MyRssFeedProvider();
-            feedList = myRssFeedProvider.parseFeed(urlLink);
-            int i=1;
-            for (Feed feed :feedList) {
-                Log.e(i+")",feed.toString()+"\n");
-                i++;
-            }
-
-            return true;
-
-        }
-
-
-        @Override
-        protected void onPostExecute(Boolean success) {
-            swipeRefreshLayout.setRefreshing(false);
-            if (success) {
-                //Toast.makeText(getContext(), "In onPostExecute", Toast.LENGTH_SHORT).show();
-                // feedTitle_textView.setText("Title");
-                //feedDate_textView.setText("Date");
-                // mFeedLinkTextView.setText("Feed Link: " + mFeedLink);
-                // Fill RecyclerView
-                gridView.setAdapter(new MyGridViewAdapter(getContext(),feedList));
-            } else {
-                Toast.makeText(getContext(),
-                        "An Error Occurred",
-                        Toast.LENGTH_LONG).show();
-            }
-
-
-        }
-    }
-*/
 
 
 }

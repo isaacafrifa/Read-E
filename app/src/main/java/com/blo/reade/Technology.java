@@ -21,7 +21,6 @@ import java.util.List;
 import controller.FetchFeedTask;
 import model.Feed;
 import model.MyErrorTracker;
-import model.MyRssFeedProvider;
 
 
 /**
@@ -39,7 +38,6 @@ public class Technology extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    String url = "http://feeds.reuters.com/reuters/technologyNews";
     GridView gridView;
     Feed selectedFeed;
     Intent intent;

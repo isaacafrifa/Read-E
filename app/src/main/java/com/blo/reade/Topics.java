@@ -70,10 +70,12 @@ public class Topics extends AppCompatActivity {
         topicList.add(new Topic("Asia", R.drawable.asia2));
         topicList.add(new Topic("Middle East", R.drawable.middle_east));
         topicList.add(new Topic("Food", R.drawable.food));
-        topicList.add(new Topic("Arts & Culture", R.drawable.arts));
-        topicList.add(new Topic("US Politics", R.drawable.america));
-        topicList.add(new Topic("Security", R.drawable.security));
-        topicList.add(new Topic("Ideas", R.drawable.ideas));
+        //commented out cos VoaNews wasnt loading images properly
+//        topicList.add(new Topic("Arts & Culture", R.drawable.arts));
+//        topicList.add(new Topic("US Politics", R.drawable.america));
+        // commented out because Wired.com doesn't support CORS policy
+//        topicList.add(new Topic("Security", R.drawable.security));
+//        topicList.add(new Topic("Ideas", R.drawable.ideas));
         topicList.add(new Topic("Lifestyle", R.drawable.lifestyle));
         topicList.add(new Topic("Relationships", R.drawable.dating));
         topicList.add(new Topic("Nature", R.drawable.nature));

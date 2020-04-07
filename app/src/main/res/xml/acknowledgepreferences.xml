@@ -53,16 +53,6 @@
         </PreferenceScreen>
 
         <PreferenceScreen
-            android:title="MUSIC-NEWS"
-            android:summary="www.music-news.com">
-
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="http://www.music-news.com/" />
-
-        </PreferenceScreen>
-
-        <PreferenceScreen
             android:title="MOVIEWEB"
             android:summary="www.movieweb.com">
 
@@ -83,15 +73,6 @@
 
         </PreferenceScreen>
 
-        <PreferenceScreen
-            android:title="VOA"
-            android:summary="www.voanews.com">
-
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://www.voanews.com/" />
-
-        </PreferenceScreen>
 
         <PreferenceScreen
             android:title="MNN"
@@ -100,16 +81,6 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://www.mnn.com/" />
-
-        </PreferenceScreen>
-
-        <PreferenceScreen
-            android:title="WIRED"
-            android:summary="www.wired.com">
-
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://www.wired.com/" />
 
         </PreferenceScreen>
 

@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.androidquery.AQuery;
+import com.bumptech.glide.Glide;
 
 import java.util.Objects;
 
@@ -29,6 +29,12 @@ import model.MyErrorTracker;
 import model.SavedFeed;
 import model.TimeAgo;
 
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
+
+
+/*
+This Activity is no longer in use. Kindly Refactor later
+ */
 public class FeedActivity extends AppCompatActivity {
     private Feed bundleObject;
     private Bundle bundle;
@@ -65,8 +71,6 @@ public class FeedActivity extends AppCompatActivity {
         TextView linktextView=findViewById(R.id.feed_LinktextView);
         Button btn = findViewById(R.id.feed_button);
 
-        AQuery aQuery = new AQuery(FeedActivity.this);
-
 
         /*       SET OBJECT VALUES TO ALL VIEWS        */
         //link
@@ -94,11 +98,12 @@ public class FeedActivity extends AppCompatActivity {
 
         //image
         if (bundleObject.getImage()!= null) {
-            //if we are not able to load the image, use a default image (R.drawable.default_image)
-            //this image is huge, avoid memory caching
-            aQuery.id(feedimageView).progress(R.id.progressBar).
-                    image(bundleObject.getImage(), false, true, 0, R.drawable.testimage, null, AQuery.FADE_IN);
 
+            Glide.with(FeedActivity.this)
+                    .load(bundleObject.getImage()) // Remote URL of image.
+                    .error(R.drawable.testimage)  //  image in case of error
+                    .transition(withCrossFade()) //added cross fade animation
+                    .into(feedimageView); //ImageView to set.
         } else {
             IoC.bbcImageCheck.imagecheck(bundleObject.getLink(),feedimageView);
             //  feedimageView.setBackgroundResource(R.drawable.africa);
