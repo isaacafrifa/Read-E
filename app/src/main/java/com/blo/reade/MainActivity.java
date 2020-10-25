@@ -24,7 +24,7 @@ import android.view.View;
 import org.apache.commons.io.FileUtils;
 
 
-public class Main2Activity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
@@ -74,7 +74,7 @@ public class Main2Activity extends AppCompatActivity {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-                // Toast.makeText(Main2Activity.this, tab.getText()+" selected", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(MainActivity.this, tab.getText()+" selected", Toast.LENGTH_SHORT).show();
                 //scroll to top
                 FragmentManager fm = getSupportFragmentManager();
                 Fragment f = mSectionsPagerAdapter.getFragment(mViewPager, tab.getPosition(), fm);
@@ -110,7 +110,7 @@ public class Main2Activity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent = new Intent(Main2Activity.this, Topics.class);
+                intent = new Intent(MainActivity.this, Topics.class);
                 // Check if we're running on Android 5.0 or higher
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     startActivity(intent);
@@ -141,12 +141,12 @@ public class Main2Activity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(Main2Activity.this, Settings.class));
+            startActivity(new Intent(MainActivity.this, Settings.class));
             finish();
             return true;
         }
         if (id == R.id.action_favorites) {
-            startActivity(new Intent(Main2Activity.this, Favorites.class));
+            startActivity(new Intent(MainActivity.this, Favorites.class));
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -160,7 +160,7 @@ public class Main2Activity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         // If you use file cache for images, regularly clean the cache dir when the application exits.
                         // Delete local cache dir (ignoring any errors):
-                        FileUtils.deleteQuietly(Main2Activity.this.getCacheDir());
+                        FileUtils.deleteQuietly(MainActivity.this.getCacheDir());
                         // finishAffinity(); Remove all the previous activities from the back stack.... requires API 16 and above
                         finishAffinity();
                     }

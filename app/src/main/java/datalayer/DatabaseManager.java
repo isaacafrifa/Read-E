@@ -13,8 +13,8 @@ import java.util.Date;
 import model.SavedFeed;
 
 public class DatabaseManager {
-    private SQLiteDatabase wdb;
-    private SQLiteDatabase rdb;
+    private final SQLiteDatabase wdb;
+    private final SQLiteDatabase rdb;
 
     public DatabaseManager(Context ctx) {
         LocalDatabase helper = new LocalDatabase(ctx, LocalDatabase.DATABASE_NAME, null, LocalDatabase.DATABASE_VERSION);
@@ -24,7 +24,7 @@ public class DatabaseManager {
 
 
     //------------------- Calls
-    public boolean ADD_FEED(SavedFeed cus){
+    public boolean ADD_FEED(SavedFeed cus) {
         ContentValues cv=new ContentValues();
         cv.put(LocalDatabase.TITLE, cus.getTitle());
         cv.put(LocalDatabase.DATEOFPUBLICATION, cus.getDateofpublication());
@@ -61,7 +61,6 @@ public class DatabaseManager {
                     vocab.setTimeSaved(cs.getString(cs.getColumnIndex(LocalDatabase.TIMESAVED)));
 
                     all.add(vocab);
-//                    Log.e(" ----",all+"");
                 }while (cs.moveToNext());
             }
         }

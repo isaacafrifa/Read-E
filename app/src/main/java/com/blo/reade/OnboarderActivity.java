@@ -55,7 +55,7 @@ public class OnboarderActivity extends com.chyrta.onboarder.OnboarderActivity {
         // Define your actions when the user press 'Skip' button
         Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show();
         finishAffinity();
-        startActivity(new Intent(this, Main2Activity.class));
+        startActivity(new Intent(this, MainActivity.class));
         overridePendingTransition(0, 0);
     }
 
@@ -64,7 +64,7 @@ public class OnboarderActivity extends com.chyrta.onboarder.OnboarderActivity {
         //moving to next page
         Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show();
         finishAffinity();
-        startActivity(new Intent(this, Main2Activity.class));
+        startActivity(new Intent(this, MainActivity.class));
         overridePendingTransition(0, 0);
     }
 }

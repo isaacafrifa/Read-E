@@ -31,10 +31,10 @@ public class World extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     GridView gridView;
-    Feed selectedFeed;
-    Intent intent;
-    Bundle bundle;
-    SwipeRefreshLayout swipeRefreshLayout;
+    private Feed selectedFeed;
+    private Intent intent;
+    private Bundle bundle;
+    private SwipeRefreshLayout swipeRefreshLayout;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;

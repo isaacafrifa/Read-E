@@ -98,7 +98,7 @@ public class Settings extends AppCompatActivity {
     public void onBackPressed() {
         // finishAffinity(); Remove all the previous activities from the back stack.... requires API 16 and above
         finishAffinity();
-        startActivity(new Intent(this, Main2Activity.class));
+        startActivity(new Intent(this, MainActivity.class));
 
     }
 
