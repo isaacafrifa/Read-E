@@ -6,15 +6,11 @@
     <color name="splashbackground">#B1560F</color>
     <color name="white">#fff</color>
         <color name="off_white">#f2f2f2</color>
-    <color name="hyperlink">#2E86C1</color>
 
 
     <color name="dark_grey">#33343b</color>
-    <color name="off_white2">#f4f4f6</color>
     <color name="off_black">#28292e</color>
     <color name="grey">#505050</color>
-    <color name="off_orange">#fdad5c</color>
-    <color name="glucosio_grey_action_icon">#7c7c7c</color>
 
 
 </resources>

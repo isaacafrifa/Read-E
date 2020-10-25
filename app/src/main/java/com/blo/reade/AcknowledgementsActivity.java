@@ -2,9 +2,10 @@ package com.blo.reade;
 
 import android.content.Intent;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 
 public class AcknowledgementsActivity extends AppCompatActivity {

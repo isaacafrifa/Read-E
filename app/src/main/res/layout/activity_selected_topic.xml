@@ -7,12 +7,12 @@
     android:orientation="vertical"
     tools:context=".SelectedTopic">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/SplashActivityTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -22,7 +22,7 @@
             app:titleTextColor="@color/white"
             app:popupTheme="@style/SplashActivityTheme.PopupOverlay" />
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <ProgressBar
         android:id="@+id/progressbar"
@@ -32,24 +32,23 @@
         android:layout_gravity="center_vertical|center_horizontal"
         />
 
-    <android.support.v4.widget.SwipeRefreshLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-    <GridView
-        android:id="@+id/gridView"
-        android:layout_width="match_parent"
-        android:layout_marginBottom="0dp"
-        android:numColumns="1"
-        android:padding="0dp"
-        android:layoutAnimation="@anim/layout_animation_fall_down"
-        android:layout_height="match_parent">
+        <GridView
+            android:id="@+id/gridView"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="0dp"
+            android:numColumns="1"
+            android:padding="0dp"
+            android:layoutAnimation="@anim/layout_animation_fall_down"
+            android:layout_height="match_parent">
 
-    </GridView>
+        </GridView>
 
 
-
-    </android.support.v4.widget.SwipeRefreshLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </LinearLayout>

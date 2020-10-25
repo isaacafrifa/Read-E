@@ -3,7 +3,6 @@ package controller;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
 import android.widget.GridView;
@@ -20,10 +19,10 @@ import model.MyErrorTracker;
 
 public class FetchFeedTask extends AsyncTask<Void, Void, Object> {
     ProgressDialog dialog;
-    private Context c;
-    private String urlAddress;
-    private GridView rv;
-    private ProgressBar progressBar;
+    private final Context c;
+    private final String urlAddress;
+    private final GridView rv;
+    private final ProgressBar progressBar;
 
     public FetchFeedTask(Context c, String urlAddress, GridView rv, ProgressBar progressBar) {
         this.c = c;

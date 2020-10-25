@@ -1,27 +1,21 @@
 package com.blo.reade;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+
+import androidx.appcompat.widget.Toolbar;
+
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.webkit.WebChromeClient;
-import android.webkit.WebResourceError;
-import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.asksira.webviewsuite.WebViewSuite;
@@ -35,7 +29,7 @@ public class WebViewActivity extends AppCompatActivity {
     // private WebView webview;
     private WebViewSuite webViewSuite;
     private ProgressDialog pd;
-    private long lastBackPressTime = 0;
+    private final long lastBackPressTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,12 +86,9 @@ public class WebViewActivity extends AppCompatActivity {
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 //Override those URLs you need and return true.
                 //dont refresh page if urls are the same
-                if (url.equals(view.getUrl())) {
-                    return true;
-                }
+                return url.equals(view.getUrl());
 
                 //Return false if you don't need to override that URL.
-                return false;
             }
         });
 

@@ -43,22 +43,12 @@
             android:name=".SelectedTopic"
             android:label="@string/title_activity_selected_topic_feed"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".TopicFeed"
-            android:label="@string/title_activity_topic_feed"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".FeedActivity"
-            android:label="@string/title_activity_feed2"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".WebViewActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation|screenSize" /> <!-- This LOC prevents webview from reloading on device screen rotate -->
-        <activity
-            android:name=".FavouritesFeed"
-            android:label="@string/title_activity_favourites_feed"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".Settings"
             android:label="@string/title_activity_settings"

@@ -36,19 +36,7 @@
         </item>
     </style>
 
-    <style name="WhiteActivityTheme" parent="AppTheme">
-        <item name="android:windowBackground">
-            @color/white
-        </item>
-    </style>
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-    <style name="SplashActivityTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
 
     <style name="SplashActivityTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
@@ -56,12 +44,6 @@
 
 
     <!-- Dark base activity theme -->
-    <style name="ActivityTheme.Primary.Base.Dark"    parent="Theme.AppCompat.NoActionBar">
-        <item name="primaryTextColor">@color/dark_grey</item>
-        <item name="secondaryTextColor">@color/dark_grey</item>
-        <item name="backgroundCardColor">@color/off_black</item>
-        <item name="dividerColor">@color/off_white2</item>
-    </style>
 
 
     <style name="DarkAppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">

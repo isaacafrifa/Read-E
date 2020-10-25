@@ -2,9 +2,13 @@ package com.blo.reade;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,10 +26,10 @@ import java.util.Objects;
 import model.Topic;
 
 public class Topics extends AppCompatActivity {
-    List<Topic> topicList;
-    Topic selectedTopic;
-    Intent intent;
-    Bundle bundle;
+    private List<Topic> topicList;
+    private Topic selectedTopic;
+    private Intent intent;
+    private Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,10 +117,10 @@ public class Topics extends AppCompatActivity {
 
 
 class myGridAdapter extends BaseAdapter {
-    private Context context;
+    private final Context context;
 
     //we are storing all the products in a list
-    private List<Topic> topicList;
+    private final List<Topic> topicList;
 
 
     public myGridAdapter(Context context, List<Topic> topicList) {

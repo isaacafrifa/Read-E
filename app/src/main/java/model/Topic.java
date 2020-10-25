@@ -1,6 +1,6 @@
 package model;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 public class Topic  implements Comparable{
     private String title;

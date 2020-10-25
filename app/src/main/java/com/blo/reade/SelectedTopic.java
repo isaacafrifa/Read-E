@@ -1,11 +1,16 @@
 package com.blo.reade;
 
 import android.content.Intent;
-import android.support.design.widget.Snackbar;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.Snackbar;
+
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,7 +24,7 @@ import controller.FetchFeedTask;
 import model.Feed;
 import model.MyErrorTracker;
 
-import static android.support.v4.widget.SwipeRefreshLayout.LARGE;
+import static androidx.swiperefreshlayout.widget.SwipeRefreshLayout.LARGE;
 
 public class SelectedTopic extends AppCompatActivity {
     String bundleObject;
@@ -183,11 +188,7 @@ public class SelectedTopic extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectedFeed = (Feed) parent.getItemAtPosition(position);
 //                //moving to next page
-//                intent= new Intent(SelectedTopic.this,TopicFeed.class);
-//                bundle= new Bundle();
-//                bundle.putSerializable("BundleObject",selectedFeed);
-//                intent.putExtras(bundle);
-//                startActivity(intent);
+
                 Snackbar snackbar = Snackbar.make(view, "View Article Online", Snackbar.LENGTH_SHORT)
                         .setAction("PROCEED", new View.OnClickListener() {
                             @Override
