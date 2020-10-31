@@ -51,8 +51,8 @@ It then sends this arraylist to adapter for binding purposes.
     InputStream is;
     GridView rv;
     ProgressDialog pd;
-    private ProgressBar progressBar;
-    private ArrayList<Feed> articles = new ArrayList<>();
+    private final ProgressBar progressBar;
+    private final ArrayList<Feed> articles = new ArrayList<>();
 
     public MyRSSParser(Context c, InputStream is, GridView rv, ProgressBar progressBar) {
         this.c = c;
@@ -121,7 +121,6 @@ It then sends this arraylist to adapter for binding purposes.
                             Log.i("new feed", "Created new feed here");
                             article = new Feed();
 
-
                         } else if (article != null) {
 
                             if (name.equalsIgnoreCase(LINK)) {
@@ -157,7 +156,7 @@ It then sends this arraylist to adapter for binding purposes.
                             } else if (name.equalsIgnoreCase(IMAGE)) {
                                 //Log.i("Attribute", "thumbnail");
                                 //------------scan and get attribute u want
-                                /***** READ ABOUT AQUERY CACHING FROM AQUERY PDF
+                                /* READ ABOUT AQUERY CACHING FROM AQUERY PDF
                                  * //return a cached copy if the data is recently fetched within 15 minutes****/
                                 String imgUrl = parser.getAttributeValue(null, "url");
                                 article.setImage(imgUrl);
