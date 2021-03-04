@@ -26,7 +26,6 @@ import java.util.Objects;
 import model.Topic;
 
 public class Topics extends AppCompatActivity {
-    private List<Topic> topicList;
     private Topic selectedTopic;
     private Intent intent;
     private Bundle bundle;
@@ -45,7 +44,7 @@ public class Topics extends AppCompatActivity {
         //set back icon on action bar
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        topicList = new ArrayList<>();
+        List<Topic> topicList = new ArrayList<>();
 
 
         GridView gridView = findViewById(R.id.topics_gridView);

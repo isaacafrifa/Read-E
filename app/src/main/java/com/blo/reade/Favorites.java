@@ -8,6 +8,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.logging.Logger;
 
 import controller.FavoritesGridAdapter;
 import datalayer.DatabaseManager;
@@ -46,6 +48,9 @@ public class Favorites extends AppCompatActivity {
         GridView gridView = findViewById(R.id.favorites_gridView);
         TextView feedEmpty_textView = findViewById(R.id.emptytextView);
         ImageView imageplaceholder = findViewById(R.id.imageplaceholder);
+
+
+
 
         DatabaseManager databaseManager = new DatabaseManager(Favorites.this);
         //Getting List from DB

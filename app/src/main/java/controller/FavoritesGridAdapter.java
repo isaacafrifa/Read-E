@@ -104,7 +104,7 @@ public class FavoritesGridAdapter extends BaseAdapter {
 
         //pubDate_textView.setText(feed.getDateofpublication()); //-- change pubDate to TimeAgo
         //Convert pubDate to TimeAgo
-        pubDate_textView.setText(String.format("%s ago", TimeAgoConverter.convertToTimeAgo(feed.getDateofpublication())));
+        pubDate_textView.setText(String.format("%s ago", TimeAgoConverter.convertToTimeAgo(feed.getDateOfPublication())));
 
         savedDate_textView.setText(String.format("Saved on: %s", feed.getTimeSaved()));
         description_textView.setText(feed.getDescription());
@@ -172,7 +172,7 @@ public class FavoritesGridAdapter extends BaseAdapter {
                                 return true;
                             case R.id.action_share:
                                 //convert savedfeed to feed
-                                Feed sharedFeed = new Feed(feed.getTitle(), feed.getDateofpublication(), feed.getDescription(),
+                                Feed sharedFeed = new Feed(feed.getTitle(), feed.getDateOfPublication(), feed.getDescription(),
                                         feed.getLink(), feed.getImageUrl(), feed.getSource());
                                 ShareTextUrl.shareTextUrl(sharedFeed, context);
                                 return true;

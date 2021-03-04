@@ -17,9 +17,11 @@ import android.widget.GridView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 import controller.FetchFeedTask;
+import model.Constants;
 import model.Feed;
 import model.MyErrorTracker;
 
@@ -34,7 +36,7 @@ import model.MyErrorTracker;
  */
 public class Entertainment extends Fragment {
 
-    private final static String urlAddress = "https://www.esquire.com/rss/entertainment.xml/";
+    private final static String urlAddress = Constants.ENTERTAINMENT_URL;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -46,7 +48,7 @@ public class Entertainment extends Fragment {
     private Bundle bundle;
     private SwipeRefreshLayout swipeRefreshLayout;
     private OnFragmentInteractionListener mListener;
-
+    private final ArrayList<String> urlAddressList= new ArrayList<>();
     public Entertainment() {
         // Required empty public constructor
     }
@@ -87,10 +89,10 @@ public class Entertainment extends Fragment {
         gridView = rootView.findViewById(R.id.gridView);
         ProgressBarLoading = rootView.findViewById(R.id.progressbar);
         swipeRefreshLayout = rootView.findViewById(R.id.swipe_container);
-
+        urlAddressList.add(urlAddress);
         //Fetch feeds
         // new FetchFeedTask().execute((Void) null);
-        new FetchFeedTask(getContext(), urlAddress, gridView, ProgressBarLoading).execute();
+        new FetchFeedTask(getContext(), urlAddressList, gridView, ProgressBarLoading).execute();
 
         //Handling Swipe Refresh Layout
         swipeRefreshLayout.setColorScheme(android.R.color.holo_blue_dark,
@@ -99,7 +101,7 @@ public class Entertainment extends Fragment {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                new FetchFeedTask(getContext(), urlAddress, gridView, ProgressBarLoading).execute();
+                new FetchFeedTask(getContext(), urlAddressList, gridView, ProgressBarLoading).execute();
                 swipeRefreshLayout.setRefreshing(false);
 
             }

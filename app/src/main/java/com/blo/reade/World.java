@@ -17,31 +17,35 @@ import android.widget.GridView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 import controller.FetchFeedTask;
+import model.Constants;
 import model.Feed;
 import model.MyErrorTracker;
 
 
 public class World extends Fragment {
-    final static String urlAddress = "http://feeds.bbci.co.uk/news/world/rss.xml";
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    GridView gridView;
-    private Feed selectedFeed;
-    private Intent intent;
-    private Bundle bundle;
-    private SwipeRefreshLayout swipeRefreshLayout;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
     private OnFragmentInteractionListener mListener;
     //------------- MY PARAMS
+    private final static String urlAddress = Constants.WORLD_URL;
     private ProgressBar ProgressBarLoading;
-    //  https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml
+     GridView gridView;
+    private Feed selectedFeed;
+    private Intent intent;
+    private Bundle bundle;
+    private SwipeRefreshLayout swipeRefreshLayout;
+    private final ArrayList<String> urlAddressList= new ArrayList<>();
 
 
     public World() {
@@ -82,12 +86,12 @@ public class World extends Fragment {
 
         gridView = rootView.findViewById(R.id.gridView);
         ProgressBarLoading = rootView.findViewById(R.id.progressbar);
-//        feedTitle_textView = rootView.findViewById(R.id.Title_textView);
-//        feedDate_textView = rootView.findViewById(R.id.Date_textView);
-//        feedImageView_textView = rootView.findViewById(R.id.Feed_imageView);
         swipeRefreshLayout = rootView.findViewById(R.id.swipe_container);
+        //add urls to list
+        urlAddressList.add(urlAddress);
+        urlAddressList.add("https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml");
 
-        new FetchFeedTask(getContext(), urlAddress, gridView, ProgressBarLoading).execute();
+        new FetchFeedTask(getContext(), urlAddressList, gridView, ProgressBarLoading).execute();
 
 
         //Handling Swipe Refresh Layout
@@ -97,7 +101,7 @@ public class World extends Fragment {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                new FetchFeedTask(getContext(), urlAddress, gridView, ProgressBarLoading).execute();
+                new FetchFeedTask(getContext(), urlAddressList, gridView, ProgressBarLoading).execute();
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
@@ -112,7 +116,7 @@ public class World extends Fragment {
                         .setAction("PROCEED", new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                //                //moving to next page
+                                //moving to next page
                                 intent = new Intent(getContext(), WebViewActivity.class);
                                 bundle = new Bundle();
                                 //check empty link
@@ -129,7 +133,6 @@ public class World extends Fragment {
 
             }
         });
-
 
         // gridView.smoothScrollToPosition(0);
         return rootView;

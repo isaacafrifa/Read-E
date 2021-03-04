@@ -18,6 +18,7 @@ import android.widget.GridView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 import controller.FetchFeedTask;
@@ -35,6 +36,7 @@ public class SelectedTopic extends AppCompatActivity {
     SwipeRefreshLayout swipeRefreshLayout;
     String urlAddress;
     private ProgressBar ProgressBarLoading;
+    private final ArrayList<String> urlAddressList= new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,8 +166,10 @@ public class SelectedTopic extends AppCompatActivity {
             urlAddress = "https://www.elle.com/rss/beauty.xml/";
         }
 
+        //adding urlAddress to List
+        urlAddressList.add(urlAddress);
         //Fetch feeds
-        new FetchFeedTask(SelectedTopic.this, urlAddress, gridView, ProgressBarLoading).execute();
+        new FetchFeedTask(SelectedTopic.this, urlAddressList, gridView, ProgressBarLoading).execute();
 
 
         //Handling Swipe Refresh Layout
@@ -175,7 +179,7 @@ public class SelectedTopic extends AppCompatActivity {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                new FetchFeedTask(SelectedTopic.this, urlAddress, gridView, ProgressBarLoading).execute();
+                new FetchFeedTask(SelectedTopic.this, urlAddressList, gridView, ProgressBarLoading).execute();
                 swipeRefreshLayout.setRefreshing(false);
 
             }

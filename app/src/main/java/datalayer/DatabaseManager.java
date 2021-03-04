@@ -27,7 +27,7 @@ public class DatabaseManager {
     public boolean ADD_FEED(SavedFeed cus) {
         ContentValues cv=new ContentValues();
         cv.put(LocalDatabase.TITLE, cus.getTitle());
-        cv.put(LocalDatabase.DATEOFPUBLICATION, cus.getDateofpublication());
+        cv.put(LocalDatabase.DATEOFPUBLICATION, cus.getDateOfPublication());
         cv.put(LocalDatabase.LINK, cus.getLink());
         cv.put(LocalDatabase.DESCRIPTION, cus.getDescription());
         cv.put(LocalDatabase.IMAGEURL, cus.getImageUrl());
@@ -53,7 +53,7 @@ public class DatabaseManager {
                     SavedFeed vocab=new SavedFeed();
                     vocab.setId(cs.getInt(cs.getColumnIndex(LocalDatabase.ID)));
                     vocab.setTitle(cs.getString(cs.getColumnIndex(LocalDatabase.TITLE)));
-                    vocab.setDateofpublication(cs.getString(cs.getColumnIndex(LocalDatabase.DATEOFPUBLICATION)));
+                    vocab.setDateOfPublication(cs.getString(cs.getColumnIndex(LocalDatabase.DATEOFPUBLICATION)));
                     vocab.setLink(cs.getString(cs.getColumnIndex(LocalDatabase.LINK)));
                     vocab.setDescription(cs.getString(cs.getColumnIndex(LocalDatabase.DESCRIPTION)));
                     vocab.setImageUrl(cs.getString(cs.getColumnIndex(LocalDatabase.IMAGEURL)));
@@ -130,7 +130,7 @@ public class DatabaseManager {
         assert cs != null;
         vocab.setId(cs.getInt(cs.getColumnIndex(LocalDatabase.ID)));
         vocab.setTitle(cs.getString(cs.getColumnIndex(LocalDatabase.TITLE)));
-        vocab.setDateofpublication(cs.getString(cs.getColumnIndex(LocalDatabase.DATEOFPUBLICATION)));
+        vocab.setDateOfPublication(cs.getString(cs.getColumnIndex(LocalDatabase.DATEOFPUBLICATION)));
         vocab.setLink(cs.getString(cs.getColumnIndex(LocalDatabase.LINK)));
         vocab.setDescription(cs.getString(cs.getColumnIndex(LocalDatabase.DESCRIPTION)));
         vocab.setImageUrl(cs.getString(cs.getColumnIndex(LocalDatabase.IMAGEURL)));
@@ -167,7 +167,7 @@ public class DatabaseManager {
              vocab = new SavedFeed();
             vocab.setId(cs.getInt(cs.getColumnIndex(LocalDatabase.ID)));
             vocab.setTitle(cs.getString(cs.getColumnIndex(LocalDatabase.TITLE)));
-            vocab.setDateofpublication(cs.getString(cs.getColumnIndex(LocalDatabase.DATEOFPUBLICATION)));
+            vocab.setDateOfPublication(cs.getString(cs.getColumnIndex(LocalDatabase.DATEOFPUBLICATION)));
             vocab.setLink(cs.getString(cs.getColumnIndex(LocalDatabase.LINK)));
             vocab.setDescription(cs.getString(cs.getColumnIndex(LocalDatabase.DESCRIPTION)));
             vocab.setImageUrl(cs.getString(cs.getColumnIndex(LocalDatabase.IMAGEURL)));

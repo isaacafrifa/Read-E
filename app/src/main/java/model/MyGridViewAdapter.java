@@ -104,11 +104,6 @@ public class MyGridViewAdapter extends BaseAdapter {
         source_textView.setText(feed.getSource());
 
         if (feed.getImage() != null) {
-            //AQuery is outdated
-            //this image is huge, avoid memory caching
-//            aq.id(imageView).progress(R.id.progressBar).
-//                    image(feed.getImage(), false, true, 0, R.drawable.testimage, null, AQuery.FADE_IN);
-
             Glide.with(context)
                     .load(feed.getImage()) // Remote URL of image.
                     .error(R.drawable.testimage)  //  image in case of error
@@ -116,6 +111,10 @@ public class MyGridViewAdapter extends BaseAdapter {
                    //.centerCrop() // get center cropped image as result
                    // .placeholder() // Image until Image is loaded
                     .into(imageView); //ImageView to set.
+
+           /* Glide.with(context).load(feed.getImage())
+                    .placeholder(android.R.drawable.progress_indeterminate_horizontal)
+                    .error(android.R.drawable.stat_notify_error).into(imageView);*/
 
         } else {
             IoC.myImageConfig.imagecheck(feed.getLink(), imageView);

@@ -10,7 +10,6 @@ import android.os.Bundle;
 
 public class AcknowledgementsActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         if (new Settings().getNightMode(this)) {
@@ -21,8 +20,6 @@ public class AcknowledgementsActivity extends AppCompatActivity {
         getFragmentManager().beginTransaction()
                 .replace(android.R.id.content, new MyPreferenceFragment())
                 .commit();
-
-
     }
 
 
@@ -31,7 +28,6 @@ public class AcknowledgementsActivity extends AppCompatActivity {
         public void onCreate(final Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.acknowledgepreferences);
-
         }
     }
 
